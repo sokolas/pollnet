@@ -5,24 +5,24 @@ authors = ["probable-basilisk <basilisk@mtknn.com>"]
 edition = "2021"
 
 [dependencies]
-tokio-tungstenite = {version = "^0.20.1", features = ["native-tls"]}
-tungstenite = {version = "^0.20.1", features = ["native-tls"]}
+tokio-tungstenite = {version = "0.20", features = ["rustls"]}
+tungstenite = {version = "0.20", features = ["rustls"]}
 slotmap = "1.0"
-futures = "*"
-url = "*"
-futures-util = "*"
-hyper = {version = "^1.1.0", features = ["server"]}
-hyper-util = {version = "0.1.2", features = ["full"]}
+futures = "0.3"
+futures-util = "0.3"
+url = "2"
+hyper = {version = "1", features = ["server"]}
+hyper-util = {version = "0.1", features = ["full"]}
 http-body-util = "0.1"
-http = "*"
-nanoid = "*"
-reqwest = "*"
-log = "*"
+http = "0.2"
+nanoid = "0.4"
+reqwest = { version = "0.11", features = ["rustls-tls"] }
+log = "0.4"
 anyhow = "^1.0.70"
 
 [dependencies.tokio]
-version = "*"
-features = ["sync", "macros", "net", "fs"]
+version = "1"
+features = ["sync", "macros", "net", "fs", "rt-multi-thread", "io-util"]
 
 [dependencies.env_logger]
 version = "^0.10.0"
